@@ -1,4 +1,4 @@
-# Realtime-Face-Detection
+# Real-Time Face Compression
 
 This repository contains a Flask-based real-time face detection and image compression demo, showcasing JPEG and WebP compression quality metrics (PSNR & SSIM) in live video feeds.
 
@@ -137,6 +137,26 @@ graph TD
 
 ### System Flow
 
+````mermaid
+flowchart LR
+    subgraph Client [Browser]
+        U[User] -->|Click Proceed| DemoPage[Demo Page]
+        DemoPage -->|Stream| VideoFeed
+        DemoPage -->|Stream| FaceFeed
+        DemoPage -->|Poll every 1s| Metrics[Metrics Endpoint]
+        DemoPage -->|Request| StepImage[Step Image Endpoint]
+    end
+
+    subgraph Server [Flask App]
+        VideoFeed -->|Generate JPEG| Camera[Webcam]
+        FaceFeed -->|Crop Face ROI| Camera
+        Metrics -->|Return JSON| Logger[bg Thread]
+        StepImage -->|Process Frame| Processor[process_step()]
+    end
+
+    Camera --> Logger
+    Processor -->|Returns| StepImage
+    Logger --> Metrics
 ```mermaid
 flowchart LR
     subgraph Client [Browser]
@@ -157,7 +177,7 @@ flowchart LR
     Camera --> Logger
     Processor -->|Returns| StepImage
     Logger --> Metrics
-```
+````
 
 ---
 
