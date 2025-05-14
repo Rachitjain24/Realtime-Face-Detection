@@ -1,4 +1,3 @@
-````markdown
 # Real-Time Face Compression Demo
 
 A Flask-based web application that captures live webcam frames, detects faces, compresses frames with JPEG/WebP at variable quality, computes PSNR/SSIM metrics, and visualizes everything in real time.
@@ -25,9 +24,8 @@ A Flask-based web application that captures live webcam frames, detects faces, c
 - pip packages:  
   ```bash
   pip install flask opencv-python numpy scikit-image
-````
 
----
+
 
 ## Installation & Run
 
