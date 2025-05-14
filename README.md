@@ -32,7 +32,7 @@ A Flask-based web application that captures live webcam frames, detects faces, c
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/yourusername/face-compression-demo.git
+   git clone https://github.com/yourusername/Realtime-Face-Detection.git
    cd face-compression-demo
    ```
 
@@ -141,6 +141,3 @@ flowchart LR
 ---
 
 *Feel free to open issues or submit pull requests!*
-
-```
-```
