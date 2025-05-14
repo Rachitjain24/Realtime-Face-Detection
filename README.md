@@ -99,10 +99,10 @@ A Flask-based web application that captures live webcam frames, detects faces, c
 flowchart TD
   A[Clone repository] --> B[Install dependencies]
   B --> C[Run app locally]
-  C --> D[Test & debug]
+  C --> D[Test and debug]
   D --> E[Commit changes]
   E --> F[Push to GitHub]
-  F --> G[CI/CD Pipeline (optional)]
+  F --> G[CI CD pipeline optional]
 ```
 
 ### 2. System Flow
@@ -115,15 +115,15 @@ flowchart LR
   VideoRoute --> Capture[Capture Frame]
   Capture --> Detect[Face Detection]
   Detect --> Annotate[Draw Rectangle]
-  Annotate --> Encode[Encode JPEG/WebP]
+  Annotate --> Encode[Encode JPEG WebP]
   Encode --> VideoRoute
 
   DemoPage --> FaceRoute([/face_feed])
-  FaceRoute --> ROI[Return Latest Face ROI]
+  FaceRoute --> ROI[Return latest face ROI]
   ROI --> FaceRoute
 
   DemoPage --> MetricsRoute([/metrics])
-  MetricsRoute --> Compute[Compute PSNR & SSIM]
+  MetricsRoute --> Compute[Compute PSNR SSIM]
   Compute --> MetricsRoute
 
   DemoPage --> StepRoute([/step_image])
@@ -136,7 +136,7 @@ flowchart LR
 ## Further Reading
 
 * **PSNR & SSIM** fundamentals:
-  Wang, Z., Bovik, A.C., Sheikh, H.R., Simoncelli, E.P. “Image Quality Assessment: From Error Visibility to Structural Similarity.” *IEEE Transactions on Image Processing*, 2004.
+  Wang Z., Bovik A.C., Sheikh H.R., Simoncelli E.P. “Image Quality Assessment: From Error Visibility to Structural Similarity.” *IEEE Transactions on Image Processing*, 2004.
 * **OpenCV Haar Cascades** tutorial:
   [https://docs.opencv.org/4.x/db/d28/tutorial\_cascade\_classifier.html](https://docs.opencv.org/4.x/db/d28/tutorial_cascade_classifier.html)
 
